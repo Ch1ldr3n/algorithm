@@ -71,7 +71,9 @@
     "iterator": "cpp",
     "__split_buffer": "cpp",
     "deque": "cpp",
-    "ios": "cpp"
+    "ios": "cpp",
+    "cstring": "cpp",
+    "__config": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled",
   // --------------------------------------------------------------------------------------
