@@ -8,7 +8,7 @@
     {
       /* ------ these three options are mandatory ------ */
       // The type of debugger to use for this launch configuration.
-      "type": "cppdbg", // C++ debug
+      "type": "lldb", // C++ debug
       // The request type of this launch configuration. Currently, launch and attach are supported.
       //   If you come from a server or desktop background, 
       //   it's quite normal to have your editor launch your process for you, 
@@ -18,6 +18,7 @@
       // 如果你开始debug的时机和你启动项目的时机是相同的，那就launch
       "request": "launch", // debug的类型，launch表示启动，attach表示附加
       // The reader-friendly name to appear in the Debug launch configuration drop-down.
+      "targetArchitecture": "arm64",
       "name": "C++ Debug", // 在VSCode侧边栏Run那里看到的名字（可以随便起）
       /* ------ some optional attributes available to all launch configurations ------ */
       // To launch a task before the start of a debug session, set this attribute to the label of a task specified in tasks.json.
@@ -36,7 +37,7 @@
       "stopAtEntry": false,
       // If true, a console is launched for the debuggee.
       // If false, on Linux and Windows, it will appear in the Integrated Console.
-      "externalConsole": true,
+      "externalConsole": false,
       // 为true则会打开系统终端在其中进行交互
       // 如果为 true，则为调试对象启动控制台。如果为 false，它在 Linux 和 Windows 上会显示在集成控制台中
       // macOS不适用：https://code.visualstudio.com/docs/cpp/launch-json-reference#_externalconsole
