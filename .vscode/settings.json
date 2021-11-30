@@ -89,7 +89,8 @@
         "ios": "cpp",
         "cstring": "cpp",
         "__config": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "algorithm": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled",
     // --------------------------------------------------------------------------------------
