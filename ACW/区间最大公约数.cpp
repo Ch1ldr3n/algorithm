@@ -67,7 +67,7 @@ void modify(int u, int x, LL v) {
 
 Node query(int u, int l, int r) {
   // 这里因为后面查询的区间实际长度可能为1，所以l可能>r
-  if (l > r) return {0};
+  if (l > r) return {0, 0, 0, 0};
   if (l <= tr[u].l && tr[u].r <= r) return tr[u];
   int mid = tr[u].l + tr[u].r >> 1;
   // [tr[u].l, mid]  [mid+1, tr[u].r]
