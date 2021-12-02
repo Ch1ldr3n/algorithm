@@ -144,19 +144,7 @@ int main() {
   // alls[1, idx]
   //添加分割点
   idx--;
-  //   for (int i = 1, oldSize = idx; i < oldSize; ++i) {
-  //     if (alls[i + 1] - alls[i] > 1) alls[++idx] = alls[i] + 1;
-  //   }
 
-  //   quickSort(alls, 1, idx);
-  //   return 0;
-  //   alls[idx + 1] = alls[idx] + 1;  // 最后一位
-  //   while (1)
-  ;
-  //   show_1();
-  //   while (1)
-  // 建树
-  ;  //   return 0;
   build(1, 1, idx);
   //   show_2();
   for (int i = 0; i < m; ++i) {
