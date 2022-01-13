@@ -15,7 +15,7 @@ struct Node {
   int l, r;
   LL add;  // 懒标记
   LL sum;  // 区间和
-} tr[M << 3];
+} tr[M << 7];
 
 LL alls[2 * M];
 int idx;  //存储所有待离散化的值

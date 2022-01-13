@@ -34,7 +34,7 @@ void quick_sort(int q[], int l, int r) {
   quick_sort(q, l, j);
   quick_sort(q, j + 1, r);
 }
-
+    
 void pushup(int u) { tr[u].sum = tr[u << 1].sum + tr[(u << 1) | 1].sum; }
 
 void pushdown(int u) {
