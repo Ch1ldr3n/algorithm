@@ -1,29 +1,28 @@
-#include <cctype>
-#include <cstdio>
-#include <cstring>
+#include <algorithm>
+#include <iostream>
 using namespace std;
 
-const char rev[] = "A   3  HIL JM O   2TUVWXY51SE Z  8 ";
-const char *msg[] = {"is not a palindrome.", "is a regular palindrome.",
-                     "is a mirrored string.", "is a mirrored palindrome."};
+const int maxn = 100010;
+int q[maxn];
 
-inline char r(char c) {
-  if (isalpha(c)) return rev[c - 'A'];
-  return rev[c - '0' + 25];
+void qsort(int q[], int l, int r) {
+  if (l >= r) return;
+  int x = q[l + r >> 1], i = l - 1, j = r + 1;
+  while (i < j) {
+    do i++;
+    while (q[i] < x);
+    do j--;
+    while (q[j] > x);
+    if (i < j) swap(q[i], q[j]);
+  }
+  qsort(q, l, j), qsort(q, j + 1, r);
 }
 
 int main() {
-  freopen("input.txt", "r", stdin);
-  freopen("output.txt", "w", stdout);
-  char s[30];
-  while (scanf("%s", s) == 1) {
-    int p = 1, m = 1;
-    for (int i = 0, n = strlen(s); i < (n + 1) / 2; ++i) {
-      if (s[i] != s[n - 1 - i]) p = 0;
-      if (r(s[i]) != s[n - 1 - i]) m = 0;
-    }
-    int res = p + m * 2;
-    printf("%s -- %s\n\n", s, msg[res]);
-  }
-  return 0;
+  int n;
+  cin >> n;
+  for (int i = 0; i < n; ++i) cin >> q[i];
+  qsort(q, 0, n - 1);
+  for (int i = 0; i < n; ++i) cout << q[i] << " ";
+  cout << endl;
 }

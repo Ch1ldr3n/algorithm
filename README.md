@@ -14,3 +14,8 @@
 6. <https://www.udebug.com/>
 7. <https://blog.csdn.net/Artprog/article/details/54791429>
 
+https://github.com/aoapc-book/aoapc-bac2nd/blob/master/ch5/UVa12096.cpp
+
+https://vjudge.net/problem/UVA-512
+
+https://github.com/sukhoeing/aoapc-bac2nd-keys
