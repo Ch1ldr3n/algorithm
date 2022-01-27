@@ -14,6 +14,7 @@ void mergeSort(int q[], int l, int r) {
   mergeSort(q, l, mid), mergeSort(q, mid + 1, r);
   // 此时得到排好序的两部分 [l, ..., mid] [mid+1, ..., r]
   int i = l, j = mid + 1, k = l;
+  // 这里如果memset初始化tmp数组会超时。实际上并不需要重新初始化。
   while (i <= mid && j <= r) {
     if (q[i] <= q[j])  // 比较两边最小值，谁更小谁入tmp
       tmp[k++] = q[i++];

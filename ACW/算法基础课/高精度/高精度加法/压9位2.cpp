@@ -1,13 +1,15 @@
+#include <algorithm>
+#include <cstdio>
+#include <cstring>
 #include <iostream>
+#include <string>
 #include <vector>
-
 using namespace std;
 
-const int base = 1000000000;
+const int base = 1e9;
 
 vector<int> add(vector<int> &A, vector<int> &B) {
   if (A.size() < B.size()) return add(B, A);
-
   vector<int> C;
   int t = 0;
   for (int i = 0; i < A.size(); i++) {
@@ -16,7 +18,6 @@ vector<int> add(vector<int> &A, vector<int> &B) {
     C.push_back(t % base);
     t /= base;
   }
-
   if (t) C.push_back(t);
   return C;
 }
@@ -46,10 +47,8 @@ int main() {
   }
 
   auto C = add(A, B);
-
   cout << C.back();
-  for (int i = C.size() - 2; i >= 0; i--) printf("%09d", C[i]);
+  for (int i = C.size() - 2; i >= 0; --i) printf("%09d", C[i]);
   cout << endl;
-
   return 0;
 }
