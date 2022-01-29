@@ -142,7 +142,10 @@
         "typeinfo": "cpp",
         "utility": "cpp",
         "__functional_03": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "__tree": "cpp",
+        "map": "cpp",
+        "memory_resource": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled",
     // --------------------------------------------------------------------------------------
