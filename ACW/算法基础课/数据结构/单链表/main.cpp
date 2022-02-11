@@ -7,39 +7,50 @@
 using namespace std;
 
 const int maxn = 100010;
-int e[maxn], nxt[maxn], idx, head;
-// init
-head = -1;  // idx=0;
+int e[maxn], ne[maxn], head, idx;
+// 每个下标对应一个结点。 head维护头结点的下标。
 
-// head -> 0 -> 1 -> 2 -> 3 -> 4 -> -1[空集]
+void init() { head = -1; }
 
-void insAsHead(int u) {
-  e[idx] = u;
-  ne[idx] = head;
-  head = idx++;
+// 在下标为k的结点右边插入新结点
+void insert(int k, int x) {
+  e[idx] = x;
+  ne[idx] = ne[k];
+  ne[k] = idx++;
 }
 
-void del(int k) { ne[k - 1] = ne[ne[k - 1]]; }
+// 删除下标为k的结点的右边那个结点
+void remove(int k) { ne[k] = ne[ne[k]]; }
 
-void ins(int u, int k) {
-  e[idx] = u;
-  ne[idx] = ne[k - 1];
-  ne[k - 1] = idx++;
+// 添加新结点为头结点
+void newhead(int x) {
+  e[idx] = x;
+  ne[idx] = head;
+  head = idx++;
 }
 
 int main() {
   int n;
   cin >> n;
+  init();
   while (n--) {
+    int k, x;
     char op[2];
     cin >> op;
     if (*op == 'H') {
-      int x;
       cin >> x;
-      insert(x);
+      newhead(x);
     } else if (*op == 'D') {
-      int k;
       cin >> k;
+      if (k)
+        remove(k - 1);
+      else
+        head = ne[head];
+    } else {
+      cin >> k >> x;
+      insert(k - 1, x);
     }
   }
+  for (int i = head; i != -1; i = ne[i]) cout << e[i] << " ";
+  cout << endl;
 }

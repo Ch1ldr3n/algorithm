@@ -10,6 +10,9 @@ using namespace std;
 // 第k位：(n >> k) & 1
 // lowbit(x): 返回x二进制表示的最后一个1及其之后的所有数组成的二进制数
 int lowbit(int x) { return x & (-x); }
+// x: 111010
+//-x: 000110
+//->  000010
 
 int main() {
   int n;
@@ -18,7 +21,8 @@ int main() {
     int x, s = 0;
     cin >> x;
     // for (int i = x; i; i -= lowbit(i)) s++;
-    while (x) x -= lowbit(x) cout << s << " ";
+    while (x) x -= lowbit(x), s++;
+    cout << s << " ";
   }
   cout << endl;
 }
